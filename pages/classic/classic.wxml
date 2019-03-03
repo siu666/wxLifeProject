@@ -1,0 +1,14 @@
+<view class='container'>
+  <view class="header">
+  <sortDate-comp />
+  <like-comp count="{{classic.fav_nums}}" isCollected="{{classic.like_status}}" />
+  </view>
+  <move-comp hidden="{{classic.type!=100}}" img="{{classic.img}}" content="{{classic.content}}" />
+    <music-comp hidden="{{classic.type!=200}}" img="{{classic.img}}" content="{{classic.content}}" />
+  <essay-comp hidden="{{classic.type!=300}}" img="{{classic.img}}" content="{{classic.content}}" /> 
+  <nav-comp bind:left="onNext" bind:right="onPrevious" title="{{classic.title}}" 
+  first="{{first}}" latest="{{latest}}"
+  class="nav"></nav-comp>
+
+  
+</view>

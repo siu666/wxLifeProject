@@ -1,0 +1,8 @@
+<!--component/liles/index.wxml-->
+
+<view  class="like">
+<image wx:if="{{isCollected}}"  class='img' src='./images/like.png'></image>
+<image wx:else class='img' src='./images/like@dis.png'></image>
+<text class="likeNum">{{count}}</text>
+</view>
+

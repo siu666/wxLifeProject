@@ -1,0 +1,15 @@
+/* component/book/book.wxss */
+.container{
+  /* height: 450rpx; */
+  width:250rpx;
+  
+  /* display: inline-block; */
+}
+.container image{
+     width: 250rpx;
+     height: 300rpx;
+     display: block;
+}
+/* .container:nth-child(2n){
+    margin-left: 20rpx;
+} */

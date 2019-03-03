@@ -1,0 +1,17 @@
+<!--pages/book/book.wxml-->
+<view class='container'>
+<scroll-view 
+ scroll-y
+ style='height:calc(100vh - 50rpx)'
+ bindscrolltolower="lower"
+ 
+>
+<view class='bookContainer'>
+   <view class="bookComp"  wx:for="{{bookList}}" wx:for-item="item" wx:key="{{index}}"
+   style="margin-left:{{(index+1)%2==0?'45rpx':'0rpx'}}"
+   >
+      <book-comp   book="{{item}}" /> 
+   </view>
+</view>
+</scroll-view>
+</view>

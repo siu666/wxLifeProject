@@ -1,0 +1,17 @@
+<!--pages/book-detail/book-detail.wxml-->
+<view class='container'>
+  <view class="header">
+   <image src='{{bookDetail.image}}'>
+  </image>
+  <view class='title'>
+    {{bookDetail.title}}
+  </view >
+  <view class="author"><span wx:for="{{bookDetail.author}}" wx:key="index">{{item}}</span></view>
+  </view>
+ <view class='shortComment'>
+    <text>短评</text>
+    <view class='commentArea'>
+      <view class="comment" wx:for="{{commentList}}" wx:key="index"><span class="content">{{item.content}}</span><span class="likeNum">{{item.likeNum}}</span></view>
+    </view>
+ </view>
+</view>

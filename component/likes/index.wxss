@@ -1,0 +1,21 @@
+/* component/liles/index.wxss */
+.like{
+  position: relative;
+  display: inline-flex;
+    flex-direction: row;
+    padding: 10rpx;
+    width:90rpx;
+  /* padding: 14rpx; */
+}
+.like .img{
+  width: 32rpx;
+  height: 28rpx;
+}
+.like .likeNum{
+  bottom: 20rpx;
+  position: relative;
+  /* left: 32rpx; */
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #bbbbbb
+}

@@ -1,0 +1,11 @@
+<view class='sortAndDate'>
+<div class="index-container">
+<view class="title">No.</view>
+<view class="index">08</view>
+<view class="line"></view>
+</div>
+<div class="date">
+<span class="month">七月</span>
+<span class="year">2018</span>
+</div>
+</view>

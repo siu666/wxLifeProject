@@ -1,0 +1,10 @@
+{
+  "usingComponents":{
+    "like-comp":"../../component/likes/index",
+    "move-comp":"../../component/classic/movie/movie",
+      "music-comp": "../../component/classic/music/index",
+    "essay-comp": "../../component/classic/essay/index",    
+    "sortDate-comp":"../../component/sortAndDate/index",
+    "nav-comp":"../../component/nav/nav"
+  }
+}
