@@ -24,7 +24,7 @@ Page({
               bookDetail:res.data,
               
           })
-        
+        console.log(res)
      })
   },
   setSort(arr){

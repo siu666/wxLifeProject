@@ -14,4 +14,28 @@
       <view class="comment" wx:for="{{commentList}}" wx:key="index"><span class="content">{{item.content}}</span><span class="likeNum">{{item.likeNum}}</span></view>
     </view>
  </view>
+ <view class="intro">
+   <text class="title">内容简介</text>
+   <text class="content">{{bookDetail.summary}}</text>
+ </view>
+  <view class="info">
+   <text class="title">书本信息</text>
+   <view class='info-content'>
+   <view>
+   <view class="info-title">出版社</view><text class="info">{{bookDetail.publisher}}</text>
+   </view>
+   <view>
+   <view class="info-title">出版年</view><text class="info">{{bookDetail.publisher}}</text>
+   </view>
+   <view>
+   <view class="info-title">页数</view><text class="info">{{bookDetail.pages}}</text>
+   </view>
+   <view>
+   <view class="info-title">定价</view><text class="info">{{bookDetail.price}}</text>
+   </view>
+   
+  
+   </view>
+
+ </view>
 </view>
