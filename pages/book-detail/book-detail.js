@@ -7,7 +7,8 @@ Page({
    */
   data: {
      bookDetail:[],
-     commentList: [{ content: "好", likeNum: '2' }, { content: "不好", likeNum: '3' }, { content: "不错", likeNum: '4' }]
+    commentList: [{ content: "这是我看过最好的", likeNum: '2' }, { content: "内核架构里面最好的", likeNum: '2' }, { content: "好", likeNum: '2' },{ content: "好", likeNum: '2' }, { content: "不好", likeNum: '3' }, { content: "不错", likeNum: '4' }],
+    posting:false,
   },
 
   /**
@@ -22,10 +23,38 @@ Page({
      request(`/bookDetail`, params).then(res=>{
           this.setData({
               bookDetail:res.data,
-              
+              commentList:this.setSort(this.data.commentList)
           })
         console.log(res)
      })
+  },
+  formatDate(str){
+      return 'str+str';
+  },
+  onFakePost(){
+    console.log('1')
+    this.setData({
+      posting:true
+    })
+  },
+  onCancel(){
+    this.setData({
+      posting: false
+    })
+  },
+  onPost(e){
+    
+  },
+  blur(){
+    this.data.commentList.unshift({ content: "牛逼", likeNum: '2' })
+    // console.log(newCommentList)
+    this.setData({
+      commentList: this.data.commentList,
+      posting:false,
+    })
+  },
+  focus(){
+    
   },
   setSort(arr){
       console.log(arr)

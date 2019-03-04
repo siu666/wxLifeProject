@@ -1,5 +1,6 @@
 <!--pages/book-detail/book-detail.wxml-->
-<view class='container'>
+ <wxs  src="../../util/filter.wxs" module="filter" />
+<view class='containerPage'>
   <view class="header">
    <image src='{{bookDetail.image}}'>
   </image>
@@ -11,31 +12,45 @@
  <view class='shortComment'>
     <text>短评</text>
     <view class='commentArea'>
-      <view class="comment" wx:for="{{commentList}}" wx:key="index"><span class="content">{{item.content}}</span><span class="likeNum">{{item.likeNum}}</span></view>
+      <view class="comment" style="background-color:{{index==0?'#FAF5D8':index==1?'#E9F2FB':'#EFEEF2'}}" wx:for="{{commentList}}" wx:key="index" ><span class="content" >{{item.content}}</span><span class="likeNum">{{item.likeNum}}</span></view>
     </view>
  </view>
  <view class="intro">
    <text class="title">内容简介</text>
-   <text class="content">{{bookDetail.summary}}</text>
+   <text class="content">{{bookDetail.summary+bookDetail.summary+bookDetail.summary+bookDetail.summary+bookDetail.summary}}</text>
  </view>
-  <view class="info">
+  <view class="info-container">
    <text class="title">书本信息</text>
    <view class='info-content'>
-   <view>
-   <view class="info-title">出版社</view><text class="info">{{bookDetail.publisher}}</text>
+   <view class="container">
+   <view class="info-title">出版社</view><view class="info">{{bookDetail.publisher}}</view>
    </view>
-   <view>
-   <view class="info-title">出版年</view><text class="info">{{bookDetail.publisher}}</text>
-   </view>
-   <view>
-   <view class="info-title">页数</view><text class="info">{{bookDetail.pages}}</text>
-   </view>
-   <view>
-   <view class="info-title">定价</view><text class="info">{{bookDetail.price}}</text>
-   </view>
-   
+   <view class="container">
   
+   <view class="info-title">出版年</view><view class="info">{{filter.format(bookDetail.pubdate)}}</view>
    </view>
-
+   <view class="container">
+   <view class="info-title">页数</view><view class="info">{{bookDetail.pages}}</view>
+   </view>
+   <view class="container">
+   <view class="info-title">定价</view><view class="info">{{bookDetail.price}}</view>
+   </view>
+   </view>
+ 
  </view>
+ <view class='mask' wx:if="{{posting}}" bind:tap="onCancel"></view>
+ <view class="post-container" hidden='{{posting}}'>
+    <view class="post-fake" bind:tap="onFakePost">
+        <text>输入短评</text>
+    </view>
+   
+</view>
+<view class="posting-container" wx:if="{{posting}}">
+    <view class="post-header">
+       
+        <text bind:tap="onCancel" class="cancel">取消</text>
+    </view>
+    
+    <input bindconfirm="onPost" bindfocus='focus'  bindblur='blur' class="post" placeholder='短评最多12个字'></input>
+</view>
 </view>
