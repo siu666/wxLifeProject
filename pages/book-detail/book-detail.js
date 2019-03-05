@@ -32,7 +32,6 @@ Page({
       return 'str+str';
   },
   onFakePost(){
-    console.log('1')
     this.setData({
       posting:true
     })
@@ -47,7 +46,7 @@ Page({
   },
   blur(){
     this.data.commentList.unshift({ content: "牛逼", likeNum: '2' })
-    // console.log(newCommentList)
+    console.log('1')
     this.setData({
       commentList: this.data.commentList,
       posting:false,

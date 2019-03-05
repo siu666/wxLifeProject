@@ -12,7 +12,7 @@ export function request(path,param={},index='') {
     const params={a:'1',b:'2'}
     wx.request({
       url: `https://www.easy-mock.com/mock/5c179e146307e432d875de42/mockapi${url}`,
-      data:params,
+    
       success: function (res) {
         resolve(res)
       },
