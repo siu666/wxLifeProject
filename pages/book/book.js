@@ -19,17 +19,12 @@ Page({
     var event = e;
     var scrollTop = event.detail.scrollTop;
     var arr = this.data.arr;
-    
-    for (var i = 0; i < this.data.bookList.length; i++) {
-      if (arrHight[i]-this.data.screenHeight < scrollTop) {
-        if (arr[i] == false) {
-          arr[i] = true;
-          // arr[i*2]   arr[i*2+1] 
-        }
-        //n = i + 1;
-      }
-      //arr[i] = true;
-    }
+    var str =parseInt((scrollTop+555)/220)
+    console.log(str)
+    var index1=str*2;
+    var index2=str*2+1
+    this.data.arr[index1]=true;
+    this.data.arr[index2]=true
     this.setData({
       arr: arr
     })
@@ -42,8 +37,6 @@ Page({
       var arrHight = [];
       for (var i = 0; i < length; i++) {
         arr[i] = false;
-        console.log(Math.floor((i + this.data.bookList.length) / 2) * (320 / 750) * 520)
-        arrHight[i] = Math.floor((i + this.data.bookList.length) / 2) * (320 / 750) * 520;
       }
       this.setData({
         arr:this.data.arr.concat(arr),
@@ -75,32 +68,20 @@ Page({
       console.log(res)
       var arr = [];
       var length = res.data.bookList.length;
-      var isD = length % 2 == 0 ? true : false;
-      var arrHight = [];
+    
       for (var i = 0; i < length; i++) {
         
-        console.log(Math.floor(i / 2) * (320 / 750) * 520)
-        arr[i] = false;
-        arrHight[i] = Math.floor(i / 2) * (320 / 750) * 520;
+        arr[i] = false;     
+        if (Math.floor(i/2) * 220 < 555) {
+          arr[i] = true;
+          console.log(i)
+        } 
       }
       this.setData({
         arr:arr,
-        arrHight: arrHight,
         bookList: res.data.bookList
       })
-      for (var i = 0; i < this.data.bookList.length; i++) {
-        if (arrHight[i] - this.data.screenHeight < 0) {
-          if (arr[i] == false) {
-            arr[i] = true;
-            // arr[i*2]   arr[i*2+1] 
-          }
-          //n = i + 1;
-        }
-        //arr[i] = true;
-      }
-      this.setData({
-        arr: arr
-      })
+      
     })
   },
   setAttr(arr){
