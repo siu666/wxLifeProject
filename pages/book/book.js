@@ -13,14 +13,10 @@ Page({
     screenHeight:''
   },
   scroll(e) {
- 
-    var seeHeight = this.data.clientHeight; //可见区域高度
-    var arrHight = this.data.arrHight;
     var event = e;
     var scrollTop = event.detail.scrollTop;
     var arr = this.data.arr;
     var str =parseInt((scrollTop+555)/220)
-    console.log(str)
     var index1=str*2;
     var index2=str*2+1
     this.data.arr[index1]=true;
@@ -72,15 +68,23 @@ Page({
       for (var i = 0; i < length; i++) {
         
         arr[i] = false;     
-        if (Math.floor(i/2) * 220 < 555) {
-          arr[i] = true;
-          console.log(i)
-        } 
+        
       }
       this.setData({
         arr:arr,
         bookList: res.data.bookList
       })
+      setTimeout(()=>{
+        for (let i = 0; i < length; i++) {
+          if (Math.floor(i / 2) * 220 < 555) {
+            arr[i] = true;
+            this.setData({
+              arr: arr,
+            })
+          }
+        }
+      },500)
+     
       
     })
   },

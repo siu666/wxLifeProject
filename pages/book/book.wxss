@@ -30,6 +30,13 @@
      height: 100%;
      display: block;
 }
+.bookContainer .container .product_image{
+  opacity: 0;
+}
+ .bookContainer .container .loaded{
+    opacity: 1;
+     transition: opacity 1s linear 2s;
+}
 /* .container:nth-child(2n){
     margin-left: 20rpx;
 } */
