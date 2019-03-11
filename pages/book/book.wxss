@@ -9,7 +9,7 @@
   flex-wrap: wrap;
 }
 .bookComp{
-  margin-bottom: 20rpx;
+  /* margin-bottom: 20rpx; */
 }
  /* .bookComp:nth-child(2n){
     margin-left: 50rpx;
@@ -35,7 +35,7 @@
 }
  .bookContainer .container .loaded{
     opacity: 1;
-     transition: opacity 1s linear 2s;
+     transition: opacity 1s;
 }
 /* .container:nth-child(2n){
     margin-left: 20rpx;
