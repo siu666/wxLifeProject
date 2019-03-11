@@ -1,6 +1,9 @@
 <!--component/book/book.wxml-->
-<view bind:tap="onTap" class='container' >
-  <image src="{{book.image}}"></image>
+<view bind:tap="onTap" class='outside' >
+  <view class='img-container'>
+  <!-- <image src="{{book.image}}"></image> -->
+  <image src="{{arr[index] ?  item.image : ''}}"></image>
+  </view>
   <text class="book-name">{{book.author}}</text>
   <text class="book-desc">{{book.title}}</text>
   <view><span></span><span></span></view>

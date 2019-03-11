@@ -1,5 +1,5 @@
 /* pages/book/book.wxss */
-.container{
+.outside-container{
      padding: 10px 50px;
      
 }
@@ -14,3 +14,22 @@
  /* .bookComp:nth-child(2n){
     margin-left: 50rpx;
 }  */
+.bookContainer .container{
+  /* height: 450rpx; */
+  width:250rpx;
+  
+  /* display: inline-block; */
+}
+.bookContainer .container .img-container{
+   width: 250rpx;
+   height: 300rpx;
+   
+}
+.bookContainer .container image{
+     width: 100%;
+     height: 100%;
+     display: block;
+}
+/* .container:nth-child(2n){
+    margin-left: 20rpx;
+} */

@@ -32,6 +32,7 @@ Page({
       return 'str+str';
   },
   onFakePost(){
+    // this.selectComponent('#inputComp').focus();
     this.setData({
       posting:true
     })
@@ -42,10 +43,11 @@ Page({
     })
   },
   onPost(e){
-    
+       console.log(e)
   },
-  blur(){
-    this.data.commentList.unshift({ content: "牛逼", likeNum: '2' })
+  blur:function(e){
+    console.log(e)
+    this.data.commentList.unshift({ content: e.detail.value, likeNum: '1' })
     console.log('1')
     this.setData({
       commentList: this.data.commentList,

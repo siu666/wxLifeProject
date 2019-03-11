@@ -1,16 +1,28 @@
 <!--pages/book/book.wxml-->
-<view class='container'>
+<view class='outside-container'>
 <scroll-view 
  scroll-y
+ bindscroll="scroll"
  style='height:calc(100vh - 50rpx)'
  bindscrolltolower="lower"
  
 >
 <view class='bookContainer'>
-   <view class="bookComp"  wx:for="{{bookList}}" wx:for-item="item" wx:key="{{index}}"
-   style="margin-left:{{(index+1)%2==0?'45rpx':'0rpx'}}"
+<view class="bookComp"  wx:for="{{bookList}}" wx:for-item="item" wx:key="{{index}}"
+ 
    >
-      <book-comp   book="{{item}}" /> 
+   <!-- <view class="bookComp"  wx:for="{{bookList}}" wx:for-item="item" wx:key="{{index}}"
+   style="margin-left:{{(index+1)%2==0?'45rpx':'0rpx'}}"
+   > -->
+     <view class='container' >
+  <view class='img-container'>
+  <!-- <image src="{{book.image}}"></image> -->
+  <image src="{{arr[index] ?  item.image : ''}}"></image>
+  </view>
+  <text class="book-name">{{item.author}}</text>
+  <text class="book-desc">{{item.title}}</text>
+  <view><span></span><span></span></view>
+</view> 
    </view>
 </view>
 </scroll-view>

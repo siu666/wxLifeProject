@@ -51,6 +51,6 @@
         <text bind:tap="onCancel" class="cancel">取消</text>
     </view>
     
-    <input bindconfirm="onPost" bindfocus='focus'  bindblur='blur' class="post" placeholder='短评最多12个字'></input>
+    <input id='inputComp' bindconfirm="onPost" bindfocus='focus'  bindblur='blur' class="post" placeholder='短评最多12个字'></input>
 </view>
 </view>

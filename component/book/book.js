@@ -6,14 +6,14 @@ Component({
   properties: {
     book:Object,
   },
-
+  
   /**
    * 组件的初始数据
    */
   data: {
-
+    
   },
-
+ 
   /**
    * 组件的方法列表
    */
@@ -24,6 +24,7 @@ Component({
       wx.navigateTo({
         url: `/pages/book-detail/book-detail?bid=${bid}`,
       })
-     }
+     },
+    
   }
 })
