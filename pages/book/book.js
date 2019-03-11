@@ -15,8 +15,7 @@ Page({
     demoHeight:''
   },
   scroll(e) {
-    console.log(this.data.scrollHeight);
-    console.log(this.data.demoHeight)
+    
     var event = e;
     var scrollTop = event.detail.scrollTop;
     var arr = this.data.arr;
@@ -50,7 +49,7 @@ Page({
        
         bookList: this.data.bookList.concat(this.setAttr(res.data.bookList))
       })
-      console.log(this.data.bookList)
+    
     })
   },
   /**
@@ -73,16 +72,16 @@ Page({
    
     wx.getSystemInfo({
       success: function(res) {
-        console.log(res)
+      
         _this.setData({
           screenHeight: res.windowHeight
         })
-        console.log(_this.data.screenHeight)
+       
       },
     })
     request("/hotBookList").then(res => {
       
-      console.log(res)
+      
       var arr = [];
       var length = res.data.bookList.length;
     
@@ -100,7 +99,7 @@ Page({
         _this.setData({
           demoHeight: rect.height
         })
-        console.log(this.data.demoHeight)
+       
       }).exec();
       // console.log(this.data.scrollHeight);
      
@@ -115,7 +114,15 @@ Page({
         }
       },500)
      
-      
+    })
+  },
+  goDetail(e){
+    let bid = e.target.dataset.obj
+    if (!bid){
+      return
+    }
+    wx.navigateTo({
+      url: `/pages/book-detail/book-detail?bid=${bid}`,
     })
   },
   setAttr(arr){

@@ -8,7 +8,7 @@
  bindscrolltolower="lower"
  
 >
-<view class='bookContainer'>
+<view class='bookContainer' bindtap='goDetail'>
 <view class="bookComp"   wx:for="{{bookList}}" wx:for-item="item" wx:key="{{index}}"
  style="margin-left:{{(index+1)%2==0?'45rpx':'0rpx'}}" id="book-comp"
    >
@@ -18,7 +18,7 @@
      <view class='container' >
   <view class='img-container' >
   <!-- <image src="{{book.image}}"></image> -->
-  <image src="{{arr[index] ?  item.image : ''}}"  class="{{arr[index]?'loaded':'product_image'}}"></image>
+  <image data-obj='{{item.id}}' src="{{arr[index] ?  item.image : ''}}"  class="{{arr[index]?'loaded':'product_image'}}"></image>
   </view>
   <text class="book-name">{{item.author}}</text>
   <text class="book-desc">{{item.title}}</text>
