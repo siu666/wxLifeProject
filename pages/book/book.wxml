@@ -1,13 +1,13 @@
 <!--pages/book/book.wxml-->
 <view style='position:fixed;width:100%;height:100%;opacity:0.1;z-index:2' wx-if="{{isLoading}}"></view>
-<view class='outside-container'>
-<!-- <scroll-view
- id="scroll-view" 
- scroll-y
- bindscroll="scroll"
- style='height:calc(100vh - 50rpx)'
- bindscrolltolower="lower"
-> -->
+<view class='inputArea'>
+<input placeholder='搜索' bindinput="change"></input>
+</view>
+<view wx-if="{{showGuide}}" style="margin-top:50px;">
+<rich-text wx:for="{{searchList}}" wx:key="index" nodes="{{item.value}}"></rich-text>
+</view>
+<view class='outside-container' wx-if="{{!showGuide}}">
+
 <scroller id="scroll-view" bind:scroll='scroll' bind:lower="lower">
 <view class='bookContainer' bindtap='goDetail'>
 <view class="bookComp"   wx:for="{{bookList}}" wx:for-item="item" wx:key="{{index}}"

@@ -1,7 +1,7 @@
 <scroll-view
  scroll-y
  bindscroll="scroll"
- style='height:calc(100vh - 50rpx)'
+ style='height:calc(100vh - 120rpx)'
  bindscrolltolower="lower"
 >
 <view class='wrapper'>

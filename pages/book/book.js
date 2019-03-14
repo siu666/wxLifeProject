@@ -13,7 +13,12 @@ Page({
     screenHeight:'',
     scrollHeight:'',
     demoHeight:'',
+    searchValue:'',
+    showGuide:false,
     isLoading:false,
+    searchList:[{value:'可以123'},{value:'不可以234'},{value:'aa456'},{value:'bc678'}],
+    forSaveSearchList: [{ value: '可以123' }, { value: '不可以234' }, { value: 'aa456' }, { value: 'bc678' }]
+
   },
   setShow(arr, bommtomIndex,imgNum){
         for (var i = 0; i < imgNum; i++) {
@@ -37,6 +42,42 @@ Page({
     this.setData({
       arr: arr
     })
+  },
+  change(e){
+    let newList=[];
+    let filterList = [];
+    
+    var searchValue=e.detail.value;
+   
+    if(searchValue.length>0){
+      
+      console.log(searchValue)
+      filterList = this.data.forSaveSearchList;
+      console.log(filterList)
+      let reg = new RegExp(searchValue)
+      
+       filterList.map((item,index)=>{
+                 
+                 if(String(item.value).includes(searchValue)){
+                   
+                   item.value=item.value.replace(searchValue, `<span style="color:red;">${searchValue}</span>`)
+
+                 }
+            return item
+        // return String(item.value).includes(searchValue)
+        })
+      // console.log(filterList)
+        this.setData({
+           showGuide:true,
+          searchList: filterList
+        })
+      filterList=[]
+    }else{
+      this.setData({
+        showGuide: false
+      })
+    }
+
   },
   scroll(e) { 
     var event = e;
