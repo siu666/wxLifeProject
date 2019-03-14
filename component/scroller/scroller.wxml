@@ -1,0 +1,12 @@
+<scroll-view
+ scroll-y
+ bindscroll="scroll"
+ style='height:calc(100vh - 50rpx)'
+ bindscrolltolower="lower"
+>
+<view class='wrapper'>
+<slot>
+ </slot>
+ </view>
+<view style="text-align:center;color:#ccc;font-size:25rpx;padding:15rpx 0">上拉加载更多</view>
+</scroll-view>

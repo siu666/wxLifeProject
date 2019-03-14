@@ -12,27 +12,43 @@ Page({
     arrHight:[],
     screenHeight:'',
     scrollHeight:'',
-    demoHeight:''
+    demoHeight:'',
+    isLoading:false,
   },
-  scroll(e) {
+  setShow(arr, bommtomIndex,imgNum){
+        for (var i = 0; i < imgNum; i++) {
+          if (this.data.arr[bommtomIndex * imgNum + i] == true ){
+            // console.log(bommtomIndex * imgNum + i)
+              return
+          }
+          // console.log(this.data.arr[bommtomIndex * imgNum + i])
+          this.data.arr[bommtomIndex*imgNum +i] = true;
+      }
     
-    var event = e;
-    var scrollTop = event.detail.scrollTop;
-    var arr = this.data.arr;
-    var str = parseInt((scrollTop + this.data.scrollHeight) / this.data.demoHeight)
-    var index1=str*2;
-    var index2=str*2+1;
-    // console.log(str)
-    if (this.data.arr[index1] ==true&&this.data.arr[index2] ==true){
-      return
-    }
-    this.data.arr[index1]=true;
-    this.data.arr[index2]=true
+    
+    // var index1 = bommtomIndex * 2;
+    // var index2 = bommtomIndex * 2 + 1;
+    // console.log(index1,index2)
+    // if (this.data.arr[index1] == true && this.data.arr[index2] == true) {
+    //   return
+    // }
+    // this.data.arr[index1] = true;
+    // this.data.arr[index2] = true
     this.setData({
       arr: arr
     })
   },
+  scroll(e) { 
+    var event = e;
+    var scrollTop = event.detail.detail.scrollTop;
+    var arr = this.data.arr;
+    var bommtomIndex = parseInt((scrollTop + this.data.scrollHeight) / this.data.demoHeight);
+    this.setShow(arr, bommtomIndex,2)
+  },
   lower(e) {
+    this.setData({
+      isLoading:true
+    })
     wx.showLoading({
       title: '加载中',
     })
@@ -46,7 +62,7 @@ Page({
       }
       this.setData({
         arr:this.data.arr.concat(arr),
-       
+        isLoading: false,
         bookList: this.data.bookList.concat(this.setAttr(res.data.bookList))
       })
     

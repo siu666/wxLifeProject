@@ -1,5 +1,6 @@
 {
   "usingComponents":{
-    "book-comp":"../../component/book/book"
+    "book-comp":"../../component/book/book",
+    "scroller":"../../component/scroller/scroller"
   }
 }
