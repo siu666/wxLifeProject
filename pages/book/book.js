@@ -44,34 +44,47 @@ Page({
     })
   },
   change(e){
-    let newList=[];
-    let filterList = [];
-    
-    var searchValue=e.detail.value;
    
+   
+    var searchValue=e.detail.value;
+
+    let a = this.data.forSaveSearchList;
+    let b = a.concat()
+    
+   
+  //   // console.log(a);
+  //   console.log(b);
+  //  return
     if(searchValue.length>0){
+     
       
-      console.log(searchValue)
-      filterList = this.data.forSaveSearchList;
-      console.log(filterList)
       let reg = new RegExp(searchValue)
       
-       filterList.map((item,index)=>{
-                 
-                 if(String(item.value).includes(searchValue)){
-                   
-                   item.value=item.value.replace(searchValue, `<span style="color:red;">${searchValue}</span>`)
-
-                 }
-            return item
-        // return String(item.value).includes(searchValue)
+    b=  b.filter((item,index)=>{
+        
+               
+       return String(item.value).includes(searchValue)
         })
+        b.map((item,index)=>{
+          if (String(item.value).includes(searchValue)) {
+            //  console.log(index)
+            b[index] = Object.assign({}, b[index])
+            b[index].value = item.value.replace(searchValue, `<span style="color:red;">${searchValue}</span>`);
+
+
+          }
+          console.log(b[index])
+
+            return item
+        })
+     
+      console.log(b)
       // console.log(filterList)
         this.setData({
            showGuide:true,
-          searchList: filterList
+          searchList: b
         })
-      filterList=[]
+      // filterList=[]
     }else{
       this.setData({
         showGuide: false
