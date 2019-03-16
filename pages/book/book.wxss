@@ -43,26 +43,3 @@
 /* .container:nth-child(2n){
     margin-left: 20rpx;
 } */
-.inputArea{
-  position: fixed;
-  width:100%;
-
-  height: 75rpx;
-  background-color:#F0F0F0;
-  top:0;
-  left: 0;
-  line-height: 75rpx;
-}
-.inputArea input{
-  position: relative;
-   display: block;
-   box-sizing: border-box;
-   border: 1px solid ccc;
-   border-radius: 5px;
-   background-color: #ffffff;
-   top: 10rpx;
-   
-   width: 450rpx;
-   
-   margin: 0 auto;
-}

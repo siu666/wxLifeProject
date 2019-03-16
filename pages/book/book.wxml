@@ -1,11 +1,8 @@
 <!--pages/book/book.wxml-->
 <view style='position:fixed;width:100%;height:100%;opacity:0.1;z-index:2' wx-if="{{isLoading}}"></view>
-<view class='inputArea'>
-<input placeholder='搜索' bindinput="change"></input>
-</view>
-<view wx-if="{{showGuide}}" style="margin-top:50px;">
-<rich-text wx:for="{{searchList}}" wx:key="index" nodes="{{item.value}}"></rich-text>
-</view>
+
+
+<search bind:showguide="showguide" showGuide="{{showGuide}}"></search>
 <view class='outside-container' wx-if="{{!showGuide}}">
 
 <scroller id="scroll-view" bind:scroll='scroll' bind:lower="lower">

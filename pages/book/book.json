@@ -1,6 +1,7 @@
 {
   "usingComponents":{
     "book-comp":"../../component/book/book",
-    "scroller":"../../component/scroller/scroller"
+    "scroller":"../../component/scroller/scroller",
+    "search": "../../component/search/search"
   }
 }

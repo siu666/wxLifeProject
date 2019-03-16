@@ -16,8 +16,7 @@ Page({
     searchValue:'',
     showGuide:false,
     isLoading:false,
-    searchList:[{value:'可以123'},{value:'不可以234'},{value:'aa456'},{value:'bc678'}],
-    forSaveSearchList: [{ value: '可以123' }, { value: '不可以234' }, { value: 'aa456' }, { value: 'bc678' }]
+    
 
   },
   setShow(arr, bommtomIndex,imgNum){
@@ -43,54 +42,11 @@ Page({
       arr: arr
     })
   },
-  change(e){
-   
-   
-    var searchValue=e.detail.value;
-
-    let a = this.data.forSaveSearchList;
-    let b = a.concat()
-    
-   
-  //   // console.log(a);
-  //   console.log(b);
-  //  return
-    if(searchValue.length>0){
-     
-      
-      let reg = new RegExp(searchValue)
-      
-    b=  b.filter((item,index)=>{
-        
-               
-       return String(item.value).includes(searchValue)
-        })
-        b.map((item,index)=>{
-          if (String(item.value).includes(searchValue)) {
-            //  console.log(index)
-            b[index] = Object.assign({}, b[index])
-            b[index].value = item.value.replace(searchValue, `<span style="color:red;">${searchValue}</span>`);
-
-
-          }
-          console.log(b[index])
-
-            return item
-        })
-     
-      console.log(b)
-      // console.log(filterList)
-        this.setData({
-           showGuide:true,
-          searchList: b
-        })
-      // filterList=[]
-    }else{
-      this.setData({
-        showGuide: false
-      })
-    }
-
+  showguide(val){
+    console.log(val.detail)
+    this.setData({
+       showGuide:val.detail
+    })
   },
   scroll(e) { 
     var event = e;

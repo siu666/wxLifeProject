@@ -1,0 +1,14 @@
+<view class='inputArea'>
+<input placeholder='搜索' bindinput="change"></input>
+<view wx-if="{{showGuide}}" >
+<view class='guide'>
+
+<rich-text wx:for="{{searchList}}" wx:key="index" nodes="{{item.value}}"></rich-text>
+</view>
+
+<view class='hotSearch'>
+<text style="display:block;">热门搜索</text>
+   <span style="display:inline-block;background-color:#ccc;margin-left:5rpx;border-radius:5px;max-width:120rpx;width:120rpx;text-align:center" wx:for="{{hotSearch}}" wx:key="index">{{item}}</span>
+</view>
+</view>
+</view>
