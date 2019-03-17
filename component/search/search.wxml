@@ -1,5 +1,5 @@
 <view class='inputArea'>
-<input placeholder='搜索' bindinput="change"></input>
+<input placeholder='搜索' bindinput="change" bind:focus='focus' bindblur='blur'></input>
 </view>
 <view wx-if="{{showGuide}}" class='searchArea'>
 <view class='guide'>

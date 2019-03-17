@@ -14,7 +14,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    searchList: [{ value: '可以123' }, { value: '不可以234' }, { value: 'aa456' }, { value: 'bc678' }],
+    searchList:[],
+    // searchList: [{ value: '可以123' }, { value: '不可以234' }, { value: 'aa456' }, { value: 'bc678' }],
     forSaveSearchList: [{ value: '可以123' }, { value: '不可以234' }, { value: 'aa456' }, { value: 'bc678' }],
     hotSearch:['cv','123','阿瑟东']
   },
@@ -23,8 +24,15 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    focus(){
+      this.triggerEvent('showguide', true)
+    },
+    blur(){
+      this.triggerEvent('showguide', false)
 
+    },
    change(e){
+
      var searchValue = e.detail.value;
 
      let a = this.data.forSaveSearchList;
@@ -57,14 +65,17 @@ Component({
 
        console.log(b)
        // console.log(filterList)
-       this.triggerEvent('showguide', true)
+      
        this.setData({
          
          searchList: b
        })
        // filterList=[]
      } else {
-       this.triggerEvent('showguide',false)
+       this.setData({
+
+         searchList: []
+       })
      }
    },
   }
