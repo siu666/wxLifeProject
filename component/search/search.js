@@ -43,7 +43,10 @@ Component({
          if (String(item.value).includes(searchValue)) {
            //  console.log(index)
            b[index] = Object.assign({}, b[index])
+          //  b[index].value=`<div style="padding-left:30px">${b[index].value}</div>`
+          
            b[index].value = item.value.replace(searchValue, `<span style="color:red;">${searchValue}</span>`);
+           b[index].value = '<div style="display:block;padding-left:30px;height:40px;line-height:40px">' + b[index].value +'</div>'
 
 
          }

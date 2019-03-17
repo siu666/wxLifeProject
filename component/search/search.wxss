@@ -1,4 +1,4 @@
-/* component/search/search.wxss */.inputArea{
+.inputArea{
   position: fixed;
   width:100%;
 
@@ -20,4 +20,41 @@
    width: 450rpx;
    
    margin: 0 auto;
+}
+.searchArea{
+   position: relative;
+   margin-top: 75rpx;
+}
+.hotSearch .title{
+  
+  display:block;
+}
+.guide .guideContent{
+  position: relative;
+  
+
+}
+.guide .guideContent::after {
+  content: ''; 
+     position: absolute;
+     left: 30px;
+     bottom: 0;
+     right: 0;
+     width: 500px;
+     height: 1PX;
+     background-color: #dcdcdc;
+
+}
+.hotSearch .content{
+  position: relative;
+  display:inline-block;
+  background-color:#ccc;
+  margin-left:5rpx;
+  border-radius:5px;
+  max-width:120rpx;
+  width:120rpx;
+  text-align:center;
+}
+.hotSearch .content::after{
+    
 }
