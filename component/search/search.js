@@ -9,15 +9,16 @@ Component({
       value:false
     }
   },
-
+  
   /**
    * 组件的初始数据
    */
   data: {
     searchList:[],
-    // searchList: [{ value: '可以123' }, { value: '不可以234' }, { value: 'aa456' }, { value: 'bc678' }],
     forSaveSearchList: [{ value: '可以123' }, { value: '不可以234' }, { value: 'aa456' }, { value: 'bc678' }],
-    hotSearch:['cv','123','阿瑟东']
+    hotSearch:['cv','123','阿瑟东'],
+    inputValue:'',
+    historyList:[]
   },
 
   /**
@@ -26,15 +27,35 @@ Component({
   methods: {
     focus(){
       this.triggerEvent('showguide', true)
+      const value = wx.getStorageSync('historyList')
+      
+      // wx.clearStorageSync()
+      if(value){
+        this.setData({
+          historyList: value
+        })
+        
+      }
+      
     },
     blur(){
       this.triggerEvent('showguide', false)
 
     },
+    putHistory() {
+      if(!this.data.inputValue){
+        return
+      }
+      this.data.historyList.unshift(this.data.inputValue)
+      wx.setStorage({
+        key: 'historyList',
+        data: this.data.historyList
+      })
+    },
    change(e){
-
+    
      var searchValue = e.detail.value;
-
+     
      let a = this.data.forSaveSearchList;
      let b = a.concat()
 
@@ -67,13 +88,13 @@ Component({
        // console.log(filterList)
       
        this.setData({
-         
+         inputValue:searchValue,
          searchList: b
        })
        // filterList=[]
      } else {
        this.setData({
-
+ 
          searchList: []
        })
      }

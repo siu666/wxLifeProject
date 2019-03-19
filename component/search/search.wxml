@@ -1,5 +1,7 @@
 <view class='inputArea'>
 <input placeholder='搜索' bindinput="change" bind:focus='focus' bindblur='blur'></input>
+<image class="icon-search" src='../../images/search/search.png' bindtap='putHistory'></image>
+
 </view>
 <view wx-if="{{showGuide}}" class='searchArea'>
 <view class='guide'>
@@ -10,6 +12,10 @@
 <view class='hotSearch'>
 <text class="title">热门搜索</text>
    <span class="content" wx:for="{{hotSearch}}" wx:key="index">{{item}}</span>
+</view>
+<view class='hisSearch'>
+<text class="title">历史搜索</text>
+   <span class="content" wx:for="{{historyList}}" wx:key="index">{{item}}</span>
 </view>
 </view>
 

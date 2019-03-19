@@ -20,6 +20,15 @@
    width: 450rpx;
    
    margin: 0 auto;
+   padding-right: 60rpx;
+}
+.inputArea .icon-search{
+     width:20px;
+     height: 20px;
+     position: absolute;
+     right: 160rpx;
+     top: 14rpx;
+     z-index: 2;
 }
 .searchArea{
    position: relative;
@@ -28,16 +37,27 @@
 .hotSearch .title{
   
   display:block;
+  padding:10px 
 }
 .guide .guideContent{
   position: relative;
   
 
 }
+.hisSearch .title{
+  
+  display:block;
+  padding:10px 
+}
+.hisSearch .content{
+   position: relative;
+   display: block;
+   padding-left: 30px;
+}
 .guide .guideContent::after {
   content: ''; 
      position: absolute;
-     left: 30px;
+     
      bottom: 0;
      right: 0;
      width: 500px;
@@ -55,6 +75,14 @@
   width:120rpx;
   text-align:center;
 }
-.hotSearch .content::after{
-    
+.hisSearch .content::after {
+  content: ''; 
+     position: absolute;
+     
+     bottom: 0;
+     right: 0;
+     width: 500px;
+     height: 1PX;
+     background-color: #dcdcdc;
+
 }
