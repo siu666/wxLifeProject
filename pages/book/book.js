@@ -43,7 +43,7 @@ Page({
     })
   },
   showguide(val){
-    console.log(val.detail)
+  
     this.setData({
        showGuide:val.detail
     })
