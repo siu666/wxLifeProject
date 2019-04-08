@@ -1,2 +1,20 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class='container' id="container">
+  <view class='classsicfy'><span style="{{locIndex==index?'color:red':''}}" wx:for="{{classicfyList}}"  wx:index="index" wx:key="{{index}}">{{item}}</span></view>
+  <scroll-view
+      class='scrollList'
+   scroll-y
+ bindscroll="scroll"
+ style='height:calc(100vh)'
+ bindscrolltolower="lower">
+  
+   <view class='shopList'><ul class="List"><li wx:for="{{shopList}}" wx:key="{{index}}">
+  <view class='index-name' id='index-Name' >{{item.index}}</view>
+  <ul class="shopItem">
+  <li style="display:block" class="item" wx:for="{{item.data}}" wx:for-item="item1" wx:for-index="index1" wx:key="{{index1}}">{{item1}}</li>
+  </ul>
+  </li>
+  </ul></view>
+  </scroll-view>
+   <view class='index-list-fixed' style="transform: {{translate3d}}">{{classicfyList[locIndex]}}</view>
+ 
+</view>

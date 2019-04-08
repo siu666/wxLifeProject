@@ -1,3 +1,4 @@
+//vue React 小程序 均可用
 const debounce=(func, wait = 500)=> {
   let timeout;
   return function (event) {

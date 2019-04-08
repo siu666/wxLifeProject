@@ -44,14 +44,21 @@
   
 
 }
+.hisSearch{
+  position: relative;
+}
 .hisSearch .title{
   
   display:block;
-  padding:10px 
+  padding:10px;
+  position: relative;
+
 }
 .hisSearch .content{
   position: relative;
    display: block;
+  
+
 }
 .guide .guideContent::after {
   content: ''; 
@@ -73,6 +80,14 @@
   max-width:120rpx;
   width:120rpx;
   text-align:center;
+}
+.hisSearch image{
+  width:20px;
+  height:20px;
+  position: absolute;
+  right: 20rpx;
+  top: 30rpx;
+  z-index: 3;
 }
 .hisSearch .content::after {
   content: ''; 

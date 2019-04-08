@@ -15,6 +15,7 @@
 </view>
 <view class='hisSearch'>
 <text class="title">历史搜索</text>
+<image src='../../images/icon/delete.png' bindtap='clearHistory'></image>
    <span class="content" wx:for="{{historyList}}" wx:key="index">{{item}}</span>
 </view>
 </view>

@@ -21,23 +21,15 @@ Page({
   },
   setShow(arr, bommtomIndex,imgNum){
         for (var i = 0; i < imgNum; i++) {
+          console.log(bommtomIndex * imgNum + i)
           if (this.data.arr[bommtomIndex * imgNum + i] == true ){
-            // console.log(bommtomIndex * imgNum + i)
+          
               return
           }
-          // console.log(this.data.arr[bommtomIndex * imgNum + i])
-          this.data.arr[bommtomIndex*imgNum +i] = true;
+          if (bommtomIndex * imgNum + i){
+            this.data.arr[bommtomIndex * imgNum + i] = true;
+          }
       }
-    
-    
-    // var index1 = bommtomIndex * 2;
-    // var index2 = bommtomIndex * 2 + 1;
-    // console.log(index1,index2)
-    // if (this.data.arr[index1] == true && this.data.arr[index2] == true) {
-    //   return
-    // }
-    // this.data.arr[index1] = true;
-    // this.data.arr[index2] = true
     this.setData({
       arr: arr
     })

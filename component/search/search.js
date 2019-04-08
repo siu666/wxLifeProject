@@ -27,8 +27,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-   
-
+    clearHistory(){
+      console.log('clear')
+      wx.clearStorageSync('historyList');
+      this.setData({
+        historyList:[]
+      })
+    },
     focus(){
       this.triggerEvent('showguide', true)
       const value = wx.getStorageSync('historyList')
@@ -43,29 +48,37 @@ Component({
       
     },
     blur(){
-      this.triggerEvent('showguide', false)
+      
 
     },
     putHistory() {
+      console.log(this.data.inputValue)
       if(!this.data.inputValue){
         return
       }
       this.data.historyList.unshift(this.data.inputValue)
+      this.setData({
+         historyList:this.data.historyList
+      })
       wx.setStorage({
         key: 'historyList',
         data: this.data.historyList
       })
+      this.triggerEvent('showguide', false)
     },
     
    change:debounce(function(e){
       
     
-
+     
      var searchValue = e.detail.value;
+     
      
      let a = this.data.forSaveSearchList;
      let b = a.concat()
-
+     this.setData({
+       inputValue: searchValue,
+     })
      if (searchValue.length > 0) {
        let reg = new RegExp(searchValue)
        b = b.filter((item, index) => {
@@ -90,7 +103,6 @@ Component({
      
       
        this.setData({
-         inputValue:searchValue,
          searchList: b
        })
        // filterList=[]

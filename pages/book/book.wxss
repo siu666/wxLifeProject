@@ -3,7 +3,6 @@
      padding: 10px 50px;
      margin-top: 40px;
      height: 990rpx;
-
      overflow: hidden;
 }
 .bookContainer{

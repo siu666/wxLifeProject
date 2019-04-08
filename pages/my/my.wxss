@@ -1,1 +1,31 @@
-/* pages/my/my.wxss */
+.container{
+    display: flex;
+}
+.container .classsicfy{
+      background-color: #ffffff;
+     width: 100px;
+     height:100vh;
+     overflow: scroll;
+}
+.container .classsicfy span{
+      display: block;
+      height: 50px;
+}
+.container .shopList{
+     /* overflow: scroll; */
+     
+      flex: 1;
+      /* height: 100vh; */
+}
+.container .scrollList{
+  position: relative;
+}
+.container .index-list-fixed{
+     position: absolute;
+      top: 0;
+      left: 80px;
+      width: 100%;
+      background-color: #ffffff;
+      z-index: 99;
+      /* padding: 16px 16px 10px 16px; */
+}

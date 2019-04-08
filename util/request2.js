@@ -1,8 +1,8 @@
-export function request(path,param={},index='') {
+export function request(path, index = '',param={}) {
   return new Promise((resolve, reject) => {
     console.log(path,index,param)
     let url = path
-    if(index){
+    if(index!=''){
        url=url+'/'+index
     }
     if(Object.keys(param).length){
