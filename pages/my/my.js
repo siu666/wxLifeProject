@@ -35,13 +35,26 @@ Page({
   onLoad: function (options) {
         
   },
+  setLoc(i){
+    if (this.data.locIndex == i) {
+
+      return
+    }
+
+
+
+    this.setData({
+      locIndex: i,
+
+    })
+  },
   scroll(e){
     let scrollTop=e.detail.scrollTop
     let arr = this.data.indexList
     for (var i = 0; i < arr.length;i++){
           if(arr[i]<=scrollTop&&scrollTop<arr[i+1]){
             let diff = arr[i + 1] - scrollTop
-            
+            this.setLoc(i)
             
               console.log(diff)
               var fixedTop
@@ -74,17 +87,7 @@ Page({
             // this.data.fixedTop = fixedTop
             // this.data.translate3d = `(0,${fixedTop}px,0)`
             // console.log(this.data.translate3d)
-              if(this.data.locIndex==i){
-                
-                return
-              }
-              
-              
-            
-              this.setData({
-                   locIndex:i,
-                   
-              })
+             
             console.log(this.data.locIndex)
           }
    }

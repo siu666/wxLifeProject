@@ -8,7 +8,7 @@
 <scroller id="scroll-view" bind:scroll='scroll' bind:lower="lower">
 <view class='bookContainer' bindtap='goDetail'>
 <view class="bookComp"   wx:for="{{bookList}}" wx:for-item="item" wx:key="{{index}}"
- style="margin-left:{{(index+1)%2==0?'45rpx':'0rpx'}}" id="book-comp"
+ style="margin-left:{{(index+1)%2==0?'35rpx':'0rpx'}}" id="book-comp"
    >
    <!-- <view class="bookComp"  wx:for="{{bookList}}" wx:for-item="item" wx:key="{{index}}"
    style="margin-left:{{(index+1)%2==0?'45rpx':'0rpx'}}"
