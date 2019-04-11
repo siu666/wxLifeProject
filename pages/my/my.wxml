@@ -8,13 +8,13 @@
  bindscrolltolower="lower">
   
    <view class='shopList'><ul class="List"><li wx:for="{{shopList}}" wx:key="{{index}}">
-  <view class='index-name' id='index-Name' >{{item.index}}</view>
+  <view class='index-name' style='position:sticky;top:0;background-color:#b3b3b3' id='index-Name' >{{item.index}}</view>
   <ul class="shopItem">
   <li style="display:block" class="item" wx:for="{{item.data}}" wx:for-item="item1" wx:for-index="index1" wx:key="{{index1}}">{{item1}}</li>
   </ul>
   </li>
   </ul></view>
   </scroll-view>
-   <view class='index-list-fixed' style="transform: {{translate3d}};left:{{left}};width:{{width}}">{{classicfyList[locIndex]}}</view>
+   <!-- <view class='index-list-fixed' style="transform: {{translate3d}};left:{{left}};width:{{width}}">{{classicfyList[locIndex]}}</view> -->
  
 </view>
