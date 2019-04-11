@@ -7,6 +7,8 @@ Page({
   data: {
     diff:-1,
     fixedTop:'',
+    width:'',
+    left:'',
     locIndex:'0',
     translate3d:'(0px,0px,0px)',
     classicfyList: ['热门', '文学', '国内', '国学', '哲学', '浪漫', '诗体', 'aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff'],
@@ -108,6 +110,8 @@ Page({
            })
       _this.setData({
         indexHeight:rect[0].height,
+        left:rect[0].left,
+        width:rect[0].width+'px',
         indexList:_this.data.indexList
       })
       console.log(_this.data.indexHeight)

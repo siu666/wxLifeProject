@@ -15,6 +15,6 @@
   </li>
   </ul></view>
   </scroll-view>
-   <view class='index-list-fixed' style="transform: {{translate3d}}">{{classicfyList[locIndex]}}</view>
+   <view class='index-list-fixed' style="transform: {{translate3d}};left:{{left}};width:{{width}}">{{classicfyList[locIndex]}}</view>
  
 </view>
