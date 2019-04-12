@@ -1,19 +1,16 @@
 <view class='container' id="container">
-  <view class='classsicfy'><span style="{{locIndex==index?'color:red':''}}" wx:for="{{classicfyList}}"  wx:index="index" wx:key="{{index}}">{{item}}</span></view>
+
   <scroll-view
+      scroll-left="{{scrollleft}}"
+      scroll-with-animation="true"
       class='scrollList'
-   scroll-y
+   scroll-x="true"
  bindscroll="scroll"
- style='height:calc(100vh)'
+ 
  bindscrolltolower="lower">
-  
-   <view class='shopList'><ul class="List"><li wx:for="{{shopList}}" wx:key="{{index}}">
-  <view class='index-name' style='position:sticky;top:0;background-color:#b3b3b3' id='index-Name' >{{item.index}}</view>
-  <ul class="shopItem">
-  <li style="display:block" class="item" wx:for="{{item.data}}" wx:for-item="item1" wx:for-index="index1" wx:key="{{index1}}">{{item1}}</li>
-  </ul>
-  </li>
-  </ul></view>
+ <view class='category' style="width:{{width}}">
+ <span class="tag" id="tag" data-index="{{index}}" wx:for="{{classicfyList}}" wx:key="index" style="padding-right:{{index==cateLen?'10px':'0'}};color:{{currentIndex==index?'red':''}}" bindtap="clickTo">{{item}}</span>
+</view>
   </scroll-view>
    <!-- <view class='index-list-fixed' style="transform: {{translate3d}};left:{{left}};width:{{width}}">{{classicfyList[locIndex]}}</view> -->
  

@@ -10,6 +10,9 @@ Page({
     width:'',
     left:'',
     locIndex:'0',
+    currentIndex:0,
+    cateLen:'',
+    scrollleft:'',
     translate3d:'(0px,0px,0px)',
     classicfyList: ['热门', '文学', '国内', '国学', '哲学', '浪漫', '诗体', 'aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff'],
     shopList: [{ index: '热门', data: ['123', '123', '123', '123', '123', '123', '123', '123']},
@@ -37,21 +40,29 @@ Page({
   onLoad: function (options) {
         
   },
+  clickTo(e){
+    console.log()
+    let currentIndex = e.target.dataset.index
+     this.setData({
+       currentIndex: currentIndex,
+       scrollleft: currentIndex*100-100
+     })
+  },
   setLoc(i){
     if (this.data.locIndex == i) {
 
       return
     }
-
-
-
     this.setData({
       locIndex: i,
 
     })
+    console.log(this.data.locIndex)
   },
   scroll(e){
     let scrollTop=e.detail.scrollTop
+    console.log(scrollTop)
+    return
     let arr = this.data.indexList
     for (var i = 0; i < arr.length;i++){
           if(arr[i]<=scrollTop&&scrollTop<arr[i+1]){
@@ -90,7 +101,7 @@ Page({
             // this.data.translate3d = `(0,${fixedTop}px,0)`
             // console.log(this.data.translate3d)
              
-            console.log(this.data.locIndex)
+           
           }
    }
   },
@@ -99,23 +110,21 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var query = wx.createSelectorQuery();
+    
+    this.setData({
+      cateLen:this.data.classicfyList.length-1
+    })
     let _this=this
-   
-
-    query.selectAll('#index-Name').boundingClientRect(function (rect) {
-          console.log(rect)
-           rect.forEach(item=>{
-             _this.data.indexList.push(item.top)
-           })
-      _this.setData({
-        indexHeight:rect[0].height,
-        left:rect[0].left,
-        width:rect[0].width+'px',
-        indexList:_this.data.indexList
+    wx.createSelectorQuery().selectAll('#tag').boundingClientRect(function (rect) {
+      let len=0
+      rect.forEach(item=>{
+          len=parseFloat(item.width)+parseFloat(len)
       })
-      console.log(_this.data.indexHeight)
-    }).exec();
+      _this.setData({
+           width:len+'px'
+      })
+    }).exec()  
+
     
   },
 
