@@ -3,7 +3,8 @@
     "pages/classic/classic",
     "pages/book/book",
     "pages/my/my",
-    "pages/book-detail/book-detail"
+    "pages/book-detail/book-detail",
+    "pages/demo/demo"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -35,6 +36,12 @@
         "selectedIconPath": "/images/tab/my@highlight.png",
         "iconPath": "/images/tab/my.png",
         "text": "喜欢"
+      },
+      {
+        "pagePath": "pages/demo/demo",
+        "selectedIconPath": "/images/tab/my@highlight.png",
+        "iconPath": "/images/tab/my.png",
+        "text": "demo"
       }
     ]
   }

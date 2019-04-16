@@ -1,17 +1,103 @@
-<view class='container' id="container">
+<view class='content' id="container">
 
   <scroll-view
       scroll-left="{{scrollleft}}"
-      scroll-with-animation="true"
+     scroll-with-animation
       class='scrollList'
    scroll-x="true"
  bindscroll="scroll"
- 
+ style='height:30px'
  bindscrolltolower="lower">
  <view class='category' style="width:{{width}}">
- <span class="tag" id="tag" data-index="{{index}}" wx:for="{{classicfyList}}" wx:key="index" style="padding-right:{{index==cateLen?'10px':'0'}};color:{{currentIndex==index?'red':''}}" bindtap="clickTo">{{item}}</span>
+ <span class="tag {{current==index?'acttag':''}}" id="tag" data-index="{{index}}" wx:for="{{classicfyList}}" wx:key="index" style="padding-right:{{index==cateLen?'10px':'0'}};color:{{current==index?'red':''}}" bindtap="clickTo">{{item}}</span>
 </view>
-  </scroll-view>
-   <!-- <view class='index-list-fixed' style="transform: {{translate3d}};left:{{left}};width:{{width}}">{{classicfyList[locIndex]}}</view> -->
+</scroll-view>
+<swiper class='swiper' indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" current="{{current}}" autoplay="{{autoplay}}"  indicator-active-color="red" indicator-color="#aaa" bindchange="swiperitemchange_func">
+    <swiper-item wx:for="{{classicfyList}}" wx:key="{{index}}">
+          <view style='background-color:red;height:100%;width:100px;'>{{item}}</view>
+    </swiper-item>
+    <!-- 收藏文章 -->
+    <!-- <swiper-item>
+      2222
+    </swiper-item>
+    <swiper-item>
+      3
+    </swiper-item>
+    <swiper-item>
+      4
+    </swiper-item>
+    <swiper-item>
+      5
+    </swiper-item>
+    <swiper-item>
+     6
+    </swiper-item>
+    <swiper-item>
+      7
+    </swiper-item>
+    <swiper-item>
+      8
+    </swiper-item>
+    <swiper-item>
+      9
+    </swiper-item>
+    <swiper-item>
+      10
+    </swiper-item>
+    <swiper-item>
+      11
+    </swiper-item>
+    <swiper-item>
+      12
+    </swiper-item>
+    <swiper-item>
+      13
+    </swiper-item> -->
+</swiper>
+  <!-- </scroll-view>
+ <scroll-view
+   class='classsicfy'
+   scroll-y
+ >
+ <view>
+ <span  wx:for="{{classicfyList}}" id="{{index}}" bindtap="choiceWordindex" wx:key="index" data-wordindex="{{item}}">{{item}}</span>
+ </view>
+ </scroll-view>
+ <scroll-view
+   class='shopList'
+   style="height:100vh"
+   scroll-y="{{canScroll}}"
+   scroll-with-animation
+   scroll-top="{{scrollTop}}"
+   scroll-into-view="{{toView}}"
+ > -->
+  <!-- <view    class="{{transition?'totop':direction=='up'?'top':'down'}}">
+     <view style='background-color:red;height:150px'></view>
+     <view style='background-color:green;height:150px'></view>
+  </view> -->
+  <!-- <ul>
+   <li  wx:for="{{shopList}}" wx:key="{{index}}" wx:for-item="item">
+    <view id="index-name">{{item.index}}</view>
+    <ul>
+      <li style="display:block" wx:for="{{item.data}}" wx:for-item="group" wx:key="{{index1}}">{{group}}</li>
+    </ul>
+   </li>
+  </ul> -->
+  <!-- <view class="contain">
+    <scroll-view
+     
+     scroll-y
+     style="height:{{sceenHeight}};z-index:99" wx:for="{{shopList}}" wx:key="index1">
+    <view id="index-name">view{{item.index}}</view>
+    
+    <view style="display:block" wx:for="{{item.data}}" wx:key="index2" wx:for-item="group">{{group}}</view>
+   
+    </scroll-view>
+  </view> -->
+
+ 
+
  
 </view>
+
+

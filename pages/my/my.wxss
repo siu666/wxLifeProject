@@ -19,10 +19,27 @@
 }
 .category{
   /* display: flex; */
+  width:100%;
   overflow-x: hidden;
   white-space: normal;
   word-wrap: break-word;
 }
+.shopList .totop{
+    position: relative;
+    top: 0;
+    transition: 0.3s;
+}
+.shopList .down{
+    position: relative;
+    top: -800px;
+    transition: none;
+}
+.shopList .top{
+    position: relative;
+    top: 800px;
+    transition: none;
+}
+.category .acttag,
 .category .tag{
   /* border-radius: 3px; */
   /* padding: 0 10px; */
@@ -30,8 +47,11 @@
   width: 100px;
   text-align: center;
   box-sizing: border-box;
-   display: inline-block;
-   
+   display: inline-block; 
+}
+.category .acttag{
+    /* font-size: 22px; */
+    /* transition: 0.5s */
 }
 .index-name{
   position: sticky;

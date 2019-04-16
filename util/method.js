@@ -1,5 +1,5 @@
 //vue React 小程序 均可用
-const debounce=(func, wait = 500)=> {
+const debounce=(func, wait = 5000)=> {
   let timeout;
   return function (event) {
     clearTimeout(timeout);
