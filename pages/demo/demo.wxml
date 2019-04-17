@@ -1,0 +1,21 @@
+<view class="body-view">
+		<scroll-view class="top-menu-view" scroll-x="true" :scroll-left="scrollLeft">
+			<block wx:for="{{menuTabs}}" wx:key="{{index}}" wx:for-item="menduTab">
+				<view class="menu-one-view" id="{{'tabNum'+index}}" bindtap="swichMenu(index)">
+					<view class="{{currentTab==index ? 'menu-one-act' : 'menu-one'}}">
+						<view class="menu-one-txt">{{menduTab.name}}</view>
+						<view class="menu-one-bottom">
+							<view class="menu-one-bottom-color"></view>
+						</view>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+		<swiper current="{{currentTab}}" class="swiper-box-list" duration="300" bindchange="swiperChange">
+			<block wx:for="(swiperDate,index1) in swiperDateList" wx:key="{{index1}}">
+				<swiper-item>
+					123
+				</swiper-item>
+			</block>
+		</swiper>
+</view>
