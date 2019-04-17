@@ -51,48 +51,7 @@ Page({
     })
   },
   scroll(e){
-    let scrollTop=e.detail.scrollTop
-    let arr = this.data.indexList
-    for (var i = 0; i < arr.length;i++){
-          if(arr[i]<=scrollTop&&scrollTop<arr[i+1]){
-            let diff = arr[i + 1] - scrollTop
-            this.setLoc(i)
-            
-            //   console.log(diff)
-            //   var fixedTop
-            //   // let fixedTop = (diff > 0 && diff < this.data.indexHeight) ? (diff - this.data.indexHeight) : 0
-            //   if (diff > 0 && diff < this.data.indexHeight){
-            //     // console.log(diff)
-            //     fixedTop = diff - this.data.indexHeight
-            //   }else{
-            //     console.log('1')
-            //     fixedTop=0
-            //   }
-            //   console.log(fixedTop)
-            //   if(this.data.fixedTop==fixedTop){
-            //     return
-            //   }
-            //   // this.data.fixedTop=fixedTop;
-            //   this.setData({
-            //     fixedTop:fixedTop,
-            //   })
-            //   this.data.translate3d = `translate3d(0px,${fixedTop}px,0px)`
-            
-            // this.setData({
-              
-            //   translate3d: this.data.translate3d
-            // })
-            // console.log(fixedTop)
-            // if (this.data.fixedTop === fixedTop) {
-            //   return
-            // }
-            // this.data.fixedTop = fixedTop
-            // this.data.translate3d = `(0,${fixedTop}px,0)`
-            // console.log(this.data.translate3d)
-             
-            console.log(this.data.locIndex)
-          }
-   }
+      console.log(e.detail.scrollTop)
   },
 
   /**

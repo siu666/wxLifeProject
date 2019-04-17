@@ -1,11 +1,40 @@
 var format = function (text) {
-  
+
   if (!text) {
     return
   }
   var reg = getRegExp('\\\\n', 'g')
   return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+};
+
+var funcA = function (e, ins) {
+  console.log(e.detail.scrollTop)
+  // var classfy = ins.selectAllComponents('.lefttab')  
+  // var list=ins.selectAllComponents('.index-name')
+  // var index;
+  // for (var i = 0; i < list.length;i++){
+  //   if (e.detail.scrollTop >= list[i].getDataset().top && e.detail.scrollTop<list[i+1].getDataset().top){
+  //         index=i
+  //         classfy[i].setStyle({
+  //        color:'red',
+  //        scrollTop:0,
+  //     })
+  //   }else{
+  //        classfy[i].setStyle({
+  //           color:'black'
+  //        })
+  //   }
+  // }
+
+
+};
+var filter = function (str) {
+  var a = '111'
+  console.log(typeof a)
+  return a
 }
-module.exports={
-   format:format
+module.exports = {
+  filter: filter,
+  funcA: funcA,
+  format: format
 }
